@@ -229,7 +229,7 @@ var mg=$("#mods"),fl=$("#fl");
 MODS.forEach(function(m){
   var c=document.createElement("div");c.className="card rv";c.dataset.c=m.c;
   var main=document.createElement("img");main.className="pic";main.src="images/"+m.i[0];main.alt=m.b+" "+m.n;main.loading="lazy";c.appendChild(main);
-  if(m.i.length>1){var th=document.createElement("div");th.className="th";m.i.forEach(function(s,k){var t=document.createElement("img");t.src="images/"+s;t.alt="Foto "+(k+1);if(!k)t.className="on";t.onclick=function(){main.src=s;[].forEach.call(th.children,function(x){x.className=""});t.className="on"};th.appendChild(t)});c.appendChild(th)}
+  if(m.i.length>1){var th=document.createElement("div");th.className="th";m.i.forEach(function(s,k){var t=document.createElement("img");t.src="images/"+s;t.alt="Foto "+(k+1);if(!k)t.className="on";t.onclick=function(){main.src="images/"+s;[].forEach.call(th.children,function(x){x.className=""});t.className="on"};th.appendChild(t)});c.appendChild(th)}
   var d=document.createElement("div");d.innerHTML='<div class="brand">'+m.b+'</div><h3>'+m.n+'</h3><div class="spec">'+m.s+'</div><div class="chips" style="margin-top:8px"><span>'+m.t+'</span></div>';c.appendChild(d);
   var bt=document.createElement("button");bt.className="btn";bt.textContent="Faça seu pedido";bt.setAttribute("data-order","Olá! Gostaria de fazer um pedido: pneu "+m.b+" "+m.n+" "+m.s.split(" • ")[0]+".");c.appendChild(bt);
   mg.appendChild(c)});
