@@ -20,18 +20,15 @@ jobs:
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Instalar dependências
-        run: npm install
-      - name: Gerar versão de produção
-        run: npm run build
-      - name: Preparar publicação
+      - name: Preparar site antigo e fotos originais
+        run: |
+          mkdir -p _site/images
+          cp index.html _site/index.html
+          cp logo.jpg palete-*.jpg pneu-*.jpg _site/images/
+      - name: Enviar arquivos para publicação
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
 
   deploy:
     environment:
