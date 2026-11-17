@@ -32,9 +32,9 @@ nav a:hover,nav a.on{background:#1a212c;color:var(--b)}
 .ic.ig:hover{background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4);border-color:transparent;transform:translateY(-3px) rotate(-6deg);box-shadow:0 8px 22px rgba(225,48,108,.45)}
 .ic.wa:hover{background:var(--wa);border-color:transparent;transform:translateY(-3px) rotate(6deg);box-shadow:0 8px 22px rgba(37,211,102,.5)}
 #burger{display:none;background:#141a23;border:1px solid #2a3340;color:#fff;border-radius:12px;width:42px;height:42px;font-size:20px;cursor:pointer}
-.hero{position:relative;min-height:calc(100vh - 66px);display:flex;align-items:center;color:#fff;overflow:hidden;background:radial-gradient(900px 500px at 85% 10%,rgba(255,106,0,.3),transparent),#07090d}
-#cv{position:absolute;inset:0;width:100%;height:100%}
-.hero .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:30px;padding-bottom:calc(min(14.5vw,160px) + 8px);width:100%}
+.hero{position:relative;min-height:calc(100vh - 66px);display:flex;align-items:center;color:#fff;overflow:hidden;background-color:#07090d;background-image:url("images/hero-rimk.webp");background-size:cover;background-position:center center}\n.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,6,10,.94) 0%,rgba(4,6,10,.76) 42%,rgba(4,6,10,.16) 100%),linear-gradient(0deg,rgba(4,6,10,.42),transparent 55%)}
+#cv{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero .wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:30px;padding-bottom:calc(min(14.5vw,160px) + 8px);width:100%}
 .tag{display:inline-flex;gap:8px;align-items:center;font-size:12px;letter-spacing:2px;color:var(--b);border:1px solid rgba(255,179,0,.4);padding:6px 14px;border-radius:99px;margin-bottom:18px;background:rgba(255,179,0,.06)}
 .tag i{width:8px;height:8px;border-radius:50%;background:var(--wa);animation:pl 1.6s infinite}
 @keyframes pl{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}100%{box-shadow:0 0 0 10px transparent}}
@@ -110,7 +110,7 @@ footer .ico-row{justify-content:center;margin:0 0 12px}
 @supports (height:100svh){.hero{min-height:calc(100svh - 66px)}}
 @media(max-height:760px) and (min-width:801px){.stats{display:none}.hero .wrap{padding-top:20px}.hero h1{font-size:46px;margin-bottom:12px}.hero p{font-size:16px;margin-bottom:18px}}
 @media(max-width:800px) and (max-height:700px){.hero p,.btn.ghost{display:none}.hero h1{margin-bottom:18px}}
-@media(max-width:800px){.stats{display:none}.hero h1{font-size:34px}.hero p{font-size:16px;margin-bottom:20px}.hero .wrap{padding-top:22px;padding-bottom:calc(15vw + 8px)}.fleet path,.fleet rect{stroke-width:5}.fleet circle{stroke-width:6}.fleet .rd{stroke-width:5}}
+@media(max-width:800px){.hero{background-position:62% center}.hero::before{background:linear-gradient(180deg,rgba(4,6,10,.86) 0%,rgba(4,6,10,.67) 56%,rgba(4,6,10,.35) 100%)}.stats{display:none}.hero h1{font-size:34px}.hero p{font-size:16px;margin-bottom:20px}.hero .wrap{padding-top:22px;padding-bottom:calc(15vw + 8px)}.fleet path,.fleet rect{stroke-width:5}.fleet circle{stroke-width:6}.fleet .rd{stroke-width:5}}
 .fab{transition:opacity .3s,transform .3s}.fab.hide{opacity:0;pointer-events:none;transform:scale(.6)}
 @media(max-width:800px){#burger{display:block}nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:#07090d;padding:10px 20px 16px;border-bottom:1px solid #1d2430}nav.open{display:flex}.himg{display:none}.two{grid-template-columns:1fr}.social .ic{width:38px;height:38px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -124,7 +124,7 @@ footer .ico-row{justify-content:center;margin:0 0 12px}
 </defs></svg>
 <div id="bar"></div>
 <header><div class="wrap nav">
-  <a href="#topo" class="logo"><img class="lg" src="logo.jpg" alt="Logo RIMK Pneus e Paletes"><div>RIMK<small>PNEUS E PALETES</small></div></a>
+  <a href="#topo" class="logo"><img class="lg" src="images/logo.jpg" alt="Logo RIMK Pneus e Paletes"><div>RIMK<small>PNEUS E PALETES</small></div></a>
   <nav id="nav"><a href="#pneus">Pneus</a><a href="#paletes">Paletes</a><a href="#pedido">Monte seu pedido</a><a href="#contato">Contato</a></nav>
   <div class="social">
     <a class="ic ig" href="https://www.instagram.com/rimk_pneus/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
@@ -145,7 +145,7 @@ footer .ico-row{justify-content:center;margin:0 0 12px}
       <a class="btn ghost" href="https://www.instagram.com/rimk_pneus/" target="_blank" rel="noopener"><svg><use href="#ig"/></svg>@rimk_pneus</a>
     </div>
   </div>
-  <img class="himg" id="himg" alt="RIMK Pneus e Paletes" src="logo.jpg">
+  <img class="himg" id="himg" alt="RIMK Pneus e Paletes" src="images/logo.jpg">
 </div></div>
 <div class="mq"><div id="mq"></div></div>
 
@@ -163,7 +163,7 @@ footer .ico-row{justify-content:center;margin:0 0 12px}
     <ul class="ck"><li>Ideais para armazenagem e transporte</li><li>Consulte modelos e quantidades</li><li>Orçamento rápido pelo WhatsApp</li></ul>
     <button class="btn" data-order="Olá! Gostaria de fazer um pedido de paletes.">Faça seu pedido</button>
   </div>
-  <div class="gal rv"><img src="palete-1.jpg" alt="Pilha de paletes de madeira" loading="lazy"><img src="palete-2.jpg" alt="Palete de madeira visto de cima" loading="lazy"><img src="palete-3.jpg" alt="Palete de madeira novo" loading="lazy"><img src="palete-4.jpg" alt="Paletes empilhados no pátio" loading="lazy"></div>
+  <div class="gal rv"><img src="images/palete-1.jpg" alt="Pilha de paletes de madeira" loading="lazy"><img src="images/palete-2.jpg" alt="Palete de madeira visto de cima" loading="lazy"><img src="images/palete-3.jpg" alt="Palete de madeira novo" loading="lazy"><img src="images/palete-4.jpg" alt="Paletes empilhados no pátio" loading="lazy"></div>
 </div></section>
 
 <section id="pedido"><div class="wrap two">
@@ -228,8 +228,8 @@ var mg=$("#mods"),fl=$("#fl");
 [["todos","Todos"],["caminhonete","Caminhonete"],["pesado","Caminhão e ônibus"]].forEach(function(f,i){var b=document.createElement("button");b.textContent=f[1];if(!i)b.className="on";b.onclick=function(){[].forEach.call(fl.children,function(x){x.className=""});b.className="on";[].forEach.call(mg.children,function(c){c.style.display=(f[0]=="todos"||c.dataset.c==f[0])?"":"none"})};fl.appendChild(b)});
 MODS.forEach(function(m){
   var c=document.createElement("div");c.className="card rv";c.dataset.c=m.c;
-  var main=document.createElement("img");main.className="pic";main.src=m.i[0];main.alt=m.b+" "+m.n;main.loading="lazy";c.appendChild(main);
-  if(m.i.length>1){var th=document.createElement("div");th.className="th";m.i.forEach(function(s,k){var t=document.createElement("img");t.src=s;t.alt="Foto "+(k+1);if(!k)t.className="on";t.onclick=function(){main.src=s;[].forEach.call(th.children,function(x){x.className=""});t.className="on"};th.appendChild(t)});c.appendChild(th)}
+  var main=document.createElement("img");main.className="pic";main.src="images/"+m.i[0];main.alt=m.b+" "+m.n;main.loading="lazy";c.appendChild(main);
+  if(m.i.length>1){var th=document.createElement("div");th.className="th";m.i.forEach(function(s,k){var t=document.createElement("img");t.src="images/"+s;t.alt="Foto "+(k+1);if(!k)t.className="on";t.onclick=function(){main.src=s;[].forEach.call(th.children,function(x){x.className=""});t.className="on"};th.appendChild(t)});c.appendChild(th)}
   var d=document.createElement("div");d.innerHTML='<div class="brand">'+m.b+'</div><h3>'+m.n+'</h3><div class="spec">'+m.s+'</div><div class="chips" style="margin-top:8px"><span>'+m.t+'</span></div>';c.appendChild(d);
   var bt=document.createElement("button");bt.className="btn";bt.textContent="Faça seu pedido";bt.setAttribute("data-order","Olá! Gostaria de fazer um pedido: pneu "+m.b+" "+m.n+" "+m.s.split(" • ")[0]+".");c.appendChild(bt);
   mg.appendChild(c)});
