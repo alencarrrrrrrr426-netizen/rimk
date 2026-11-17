@@ -9,9 +9,27 @@ const whatsappLink = 'https://wa.me/?text=' + encodeURIComponent('Olá! Gostaria
 const instagramLink = 'https://www.instagram.com/';
 
 const categories = [
-  { icon: Truck, title: 'Pneus para caminhões', text: 'Desempenho e resistência para encarar longas jornadas.' },
-  { icon: CarFront, title: 'Pneus para caminhonetes', text: 'Opções para trabalho, estrada e uso diário.' },
-  { icon: Bus, title: 'Pneus para ônibus e vans', text: 'Soluções para frotas e transporte de passageiros.' },
+  {
+    icon: Truck,
+    title: 'Pneus para caminhões',
+    text: 'Desempenho e resistência para encarar longas jornadas.',
+    image: 'https://images.unsplash.com/photo-1650212607236-0e5b1684e5f1?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Pneu de caminhão em close'
+  },
+  {
+    icon: CarFront,
+    title: 'Pneus para caminhonetes',
+    text: 'Opções para trabalho, estrada e uso diário.',
+    image: 'https://images.unsplash.com/photo-1560707839-8b78099ae077?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Pneu e roda de veículo'
+  },
+  {
+    icon: Bus,
+    title: 'Pneus para ônibus e vans',
+    text: 'Soluções para frotas e transporte de passageiros.',
+    image: 'https://images.unsplash.com/photo-1739950163040-0080f40dcdb5?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Pneu de ônibus em close'
+  },
 ];
 
 function App() {
@@ -88,10 +106,15 @@ function App() {
             <div className="category-grid">
               {categories.map(({ icon: Icon, title, text }, index) => (
                 <article className="category-card" key={title}>
-                  <div className="category-number">0{index + 1}</div>
-                  <div className="category-icon"><Icon size={27} strokeWidth={1.7} /></div>
-                  <h3>{title}</h3><p>{text}</p>
-                  <a href={whatsappLink} target="_blank" rel="noreferrer" aria-label={'Consultar ' + title}>Consultar disponibilidade <ChevronRight size={17} /></a>
+                  <div className="category-photo">
+                    <img src={categories[index].image} alt={categories[index].alt} loading="lazy" />
+                    <span className="category-number">0{index + 1}</span>
+                    <span className="category-photo-icon"><Icon size={22} strokeWidth={1.8} /></span>
+                  </div>
+                  <div className="category-card-copy">
+                    <h3>{title}</h3><p>{text}</p>
+                    <a href={whatsappLink} target="_blank" rel="noreferrer" aria-label={'Consultar ' + title}>Consultar disponibilidade <ChevronRight size={17} /></a>
+                  </div>
                 </article>
               ))}
             </div>
@@ -101,7 +124,7 @@ function App() {
         <section className="pallet-section section-pad" id="paletes">
           <div className="container pallet-grid">
             <div className="pallet-photo">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1100&q=85" alt="Estrutura de armazenagem e paletes em ambiente logístico" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1739204618173-3e89def7140f?auto=format&fit=crop&w=1200&q=85" alt="Estrutura de armazenagem e paletes em ambiente logístico" loading="lazy" />
               <div className="photo-tag"><Warehouse size={18} /> LOGÍSTICA E ARMAZENAGEM</div>
             </div>
             <div className="pallet-copy">
